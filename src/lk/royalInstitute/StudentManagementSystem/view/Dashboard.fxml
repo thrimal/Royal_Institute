@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="main" prefHeight="550.0" prefWidth="934.0" style="-fx-background-color: #2ddde2;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.royalInstitute.StudentManagementSystem.controller.DashboardController">
+   <children>
+      <AnchorPane fx:id="children" layoutX="174.0" layoutY="6.0" prefHeight="538.0" prefWidth="754.0" style="-fx-background-color: white;">
+         <children>
+            <ImageView fitHeight="550.0" fitWidth="754.0" layoutY="-1.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../asserts/IMG-20201104-WA0018.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Label fx:id="dashboard" layoutX="8.0" layoutY="14.0" onMouseClicked="#clckDashboard" prefHeight="51.0" prefWidth="160.0" text="Royal Institute">
+         <font>
+            <Font name="System Bold Italic" size="23.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnStudentForm" layoutX="1.0" layoutY="88.0" onAction="#btnStudentFormOnAction" prefHeight="51.0" prefWidth="171.0" style="-fx-background-color: white; -fx-background-radius: 30;" text="New Student">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnCourse" layoutX="1.0" layoutY="146.0" onAction="#btnCourseOnAction" prefHeight="51.0" prefWidth="171.0" style="-fx-background-color: white; -fx-background-radius: 30;" text="New Course">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnStudentDetail" layoutX="3.0" layoutY="205.0" onAction="#btnStudentDetailOnAction" prefHeight="51.0" prefWidth="171.0" style="-fx-background-color: white; -fx-background-radius: 30;" text="Student Detail">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

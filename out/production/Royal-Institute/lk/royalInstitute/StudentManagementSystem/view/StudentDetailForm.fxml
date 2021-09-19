@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="538.0" prefWidth="775.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.royalInstitute.StudentManagementSystem.controller.StudentDetailForm">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" prefHeight="17.0" prefWidth="254.0" text="Student Detail Form">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <JFXComboBox fx:id="txtCourse" labelFloat="true" layoutX="14.0" layoutY="90.0" prefHeight="35.0" prefWidth="481.0" promptText="Select Course" />
+      <TableView layoutX="15.0" layoutY="166.0" prefHeight="283.0" prefWidth="746.0">
+        <columns>
+          <TableColumn fx:id="colStudentId" prefWidth="75.0" text="Student Id" />
+          <TableColumn fx:id="colRegNo" prefWidth="75.0" text="Reg No" />
+            <TableColumn fx:id="colStudentName" prefWidth="87.0" text="Student Name" />
+            <TableColumn fx:id="colCourse" prefWidth="147.0" text="Course" />
+            <TableColumn fx:id="colAddress" prefWidth="154.0" text="Address" />
+            <TableColumn fx:id="colContact" prefWidth="110.0" text="Contact" />
+            <TableColumn fx:id="colGender" prefWidth="97.0" text="Gender" />
+        </columns>
+      </TableView>
+      <Separator layoutX="11.0" layoutY="58.0" prefHeight="3.0" prefWidth="746.0" />
+      <JFXButton fx:id="btnAllStudents" layoutX="519.0" layoutY="95.0" onAction="#btnAllStudentsOnAction" prefHeight="35.0" prefWidth="231.0" style="-fx-background-color: yellow; -fx-background-radius: 30;" text="All Students">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

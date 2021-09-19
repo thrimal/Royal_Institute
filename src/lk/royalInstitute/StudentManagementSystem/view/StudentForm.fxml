@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="538.0" prefWidth="754.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.royalInstitute.StudentManagementSystem.controller.StudentFormController">
+   <children>
+      <Label layoutX="34.0" layoutY="14.0" prefHeight="35.0" prefWidth="153.0" text="Student Form">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtStudentId" labelFloat="true" layoutX="34.0" layoutY="70.0" onAction="#txtStudentIdOnAction" promptText="Student Id">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtStudentName" labelFloat="true" layoutX="34.0" layoutY="115.0" prefHeight="30.0" prefWidth="678.0" promptText="Student Name">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <DatePicker fx:id="pckrDateOfBirth" layoutX="34.0" layoutY="218.0" prefHeight="35.0" prefWidth="174.0" promptText="Date Of Birth" />
+      <JFXTextField fx:id="txtAddress" labelFloat="true" layoutX="34.0" layoutY="168.0" prefHeight="30.0" prefWidth="678.0" promptText="Address">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtContactNo" labelFloat="true" layoutX="260.0" layoutY="221.0" prefHeight="25.0" prefWidth="227.0" promptText="Contact No">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <Label fx:id="lblDate" layoutX="573.0" layoutY="23.0" prefHeight="17.0" prefWidth="124.0" text="Date" />
+      <Separator layoutX="11.0" layoutY="55.0" prefHeight="5.0" prefWidth="728.0" />
+      <ComboBox fx:id="cmbGender" layoutX="545.0" layoutY="218.0" onAction="#cmbGenderOnAction" prefHeight="35.0" prefWidth="167.0" promptText="Gender" />
+      <ComboBox fx:id="cmbCourse" layoutX="14.0" layoutY="285.0" onAction="#cmbCourseOnAction" prefHeight="25.0" prefWidth="272.0" promptText="Course" />
+      <JFXTextField fx:id="txtCourseId" layoutX="306.0" layoutY="285.0" promptText="Course Id" />
+      <JFXTextField fx:id="txtCourseDuration" layoutX="463.0" layoutY="285.0" prefHeight="25.0" prefWidth="116.0" promptText="Course Duration" />
+      <JFXTextField fx:id="txtCourseFee" layoutX="596.0" layoutY="285.0" promptText="Course Fee" />
+      <TableView fx:id="tblStudents" layoutX="21.0" layoutY="359.0" prefHeight="125.0" prefWidth="713.0">
+        <columns>
+          <TableColumn fx:id="colCourseId" prefWidth="104.0" text="Course ID" />
+          <TableColumn fx:id="colCourse" prefWidth="278.0" text="Course" />
+            <TableColumn fx:id="colDuratiion" prefWidth="177.0" text="Duration" />
+            <TableColumn fx:id="colFee" prefWidth="153.0" text="Fee" />
+        </columns>
+      </TableView>
+      <Label fx:id="lblTotal" layoutX="26.0" layoutY="491.0" prefHeight="35.0" prefWidth="272.0" text="Total" textFill="#ff3c3c">
+         <font>
+            <Font name="System Italic" size="18.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnRegistration" layoutX="308.0" layoutY="493.0" onAction="#btnRegisterOnAction" prefHeight="25.0" prefWidth="191.0" style="-fx-background-color: #04ff00; -fx-background-radius: 30;" text="Register">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnRemove" layoutX="533.0" layoutY="493.0" onAction="#btnRemoveOnAction" prefHeight="25.0" prefWidth="191.0" style="-fx-background-color: #ea2a2a; -fx-background-radius: 30;" text="Remove">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnAdd" layoutX="336.0" layoutY="322.0" onAction="#btnAddOnAction" prefHeight="30.0" prefWidth="135.0" style="-fx-background-color: #2ec7ee; -fx-background-radius: 30;" text="Add">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
