@@ -1,18 +1,17 @@
 package lk.royalInstitute.StudentManagementSystem.entity;
 
+import lk.royalInstitute.StudentManagementSystem.dto.CourseDTO;
 import org.hibernate.annotations.ColumnDefault;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 public class Course implements SuperEntity{
     @Id
-    private String code;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long code;
     private String name;
     private String duration;
     private double courseFee;
@@ -23,18 +22,22 @@ public class Course implements SuperEntity{
     public Course() {
     }
 
-    public Course(String code, String name, String duration, double courseFee) {
-        this.setCode(code);
+    public Course(String name, String duration, double courseFee) {
+//        this.setCode(code);
         this.setName(name);
         this.setDuration(duration);
         this.setCourseFee(courseFee);
     }
 
-    public String getCode() {
+    public Course(CourseDTO courseDTO) {
+
+    }
+
+    public long getCode() {
         return code;
     }
 
-    public void setCode(String code) {
+    public void setCode(long code) {
         this.code = code;
     }
 

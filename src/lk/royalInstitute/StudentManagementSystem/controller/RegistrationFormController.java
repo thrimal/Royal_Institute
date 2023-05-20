@@ -8,8 +8,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import lk.royalInstitute.StudentManagementSystem.bo.BoFactory;
 import lk.royalInstitute.StudentManagementSystem.bo.custom.CourseBO;
+import lk.royalInstitute.StudentManagementSystem.bo.custom.RegistrationBO;
 import lk.royalInstitute.StudentManagementSystem.bo.custom.StudentBO;
 import lk.royalInstitute.StudentManagementSystem.dto.CourseDTO;
+import lk.royalInstitute.StudentManagementSystem.dto.RegistrationDTO;
 import lk.royalInstitute.StudentManagementSystem.dto.StudentDTO;
 import lk.royalInstitute.StudentManagementSystem.view.tm.CourseTM;
 import lk.royalInstitute.StudentManagementSystem.view.tm.StudentTM;
@@ -18,7 +20,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class StudentFormController implements Initializable {
+public class RegistrationFormController implements Initializable {
     public JFXTextField txtStudentId;
     public JFXTextField txtStudentName;
     public DatePicker pckrDateOfBirth;
@@ -32,17 +34,25 @@ public class StudentFormController implements Initializable {
     public JFXTextField txtCourseFee;
     public TableView<StudentTM> tblStudents;
     public Label lblTotal;
+    public TableColumn colStudentId;
+    public TableColumn colStudentName;
+    public TableColumn colContact;
+    public TableColumn colCourseId;
+    public TableColumn colCourseName;
+    public TableColumn colDuration;
+    public TableColumn colFee;
     private CourseBO courseBO=BoFactory.getInstance().getBo(BoFactory.BoType.COURSE);
     private StudentBO studentBO= BoFactory.getInstance().getBo(BoFactory.BoType.STUDENT);
-    private ObservableList<CourseTM> studentTMS = FXCollections.observableArrayList();
+    private RegistrationBO registrationBO= BoFactory.getInstance().getBo(BoFactory.BoType.REGISTRATION);
+    private ObservableList<StudentTM> studentTMS = FXCollections.observableArrayList();
+    private ObservableList<String> courses = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        ObservableList<String> courses = FXCollections.observableArrayList();
         try {
             ArrayList<CourseDTO> courseDTOS = courseBO.getAll();
             for (CourseDTO c : courseDTOS) {
-                courses.add(c.getCode());
+                courses.add(c.getName());
             }
             cmbCourse.setItems(courses);
 
@@ -84,7 +94,11 @@ public class StudentFormController implements Initializable {
     }
 
     public void btnAddOnAction(ActionEvent actionEvent) {
+        try {
 
+        }catch (Exception e){
+
+        }
     }
 
     public void cmbGenderOnAction(ActionEvent actionEvent) {
@@ -93,10 +107,10 @@ public class StudentFormController implements Initializable {
 
     public void cmbCourseOnAction(ActionEvent actionEvent) {
         try {
-            CourseDTO courseDTO = courseBO.getCourseById(cmbCourse.getValue());
+            CourseDTO courseDTO = courseBO.get(cmbCourse.getValue());
             System.out.println(courseDTO.getCourseFee());
             if(courseDTO!=null){
-                txtCourseId.setText(courseDTO.getCode());
+//                txtCourseId.setText(courseDTO.getCode());
                 txtCourseDuration.setText(courseDTO.getDuration());
                 txtCourseFee.setText(courseDTO.getCourseFee()+"");
             }

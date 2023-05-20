@@ -1,7 +1,7 @@
 package lk.royalInstitute.StudentManagementSystem.view.tm;
 
 public class StudentTM {
-    private String id;
+//    private String id;
     private String name;
     private String address;
     private String contact;
@@ -11,8 +11,8 @@ public class StudentTM {
     public StudentTM() {
     }
 
-    public StudentTM(String id, String name, String address, String contact, String dob, String gender) {
-        this.setId(id);
+    public StudentTM(String name, String address, String contact, String dob, String gender) {
+//        this.setId(id);
         this.setName(name);
         this.setAddress(address);
         this.setContact(contact);
@@ -21,13 +21,13 @@ public class StudentTM {
     }
 
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
+//    public String getId() {
+//        return id;
+//    }
+//
+//    public void setId(String id) {
+//        this.id = id;
+//    }
 
     public String getName() {
         return name;
@@ -72,7 +72,7 @@ public class StudentTM {
     @Override
     public String toString() {
         return "StudentDTO{" +
-                "id='" + id + '\'' +
+//                "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", address='" + address + '\'' +
                 ", contact='" + contact + '\'' +

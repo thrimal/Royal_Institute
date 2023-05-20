@@ -1,5 +1,6 @@
 package lk.royalInstitute.StudentManagementSystem.bo.custom;
 
+
 import lk.royalInstitute.StudentManagementSystem.bo.SuperBO;
 import lk.royalInstitute.StudentManagementSystem.dto.StudentDTO;
 

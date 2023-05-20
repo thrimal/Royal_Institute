@@ -1,16 +1,23 @@
-package lk.royalInstitute.StudentManagementSystem.dto;
+package lk.royalInstitute.StudentManagementSystem.view.tm;
 
-public class RegistrationDTO {
+import lk.royalInstitute.StudentManagementSystem.dto.CourseDTO;
+import lk.royalInstitute.StudentManagementSystem.dto.StudentDTO;
+
+/**
+ * @author Thrimal Avishka <thrimalavishka99@gmail.com>
+ * @since 19-Nov-21
+ */
+public class RegistrationTM {
 //    private int regNo;
     private String regDate;
     private double regFee;
     private StudentDTO studentDTO;
     private CourseDTO courseDTO;
 
-    public RegistrationDTO() {
+    public RegistrationTM() {
     }
 
-    public RegistrationDTO(String regDate, double regFee, StudentDTO studentDTO, CourseDTO courseDTO) {
+    public RegistrationTM(String regDate, double regFee, StudentDTO studentDTO, CourseDTO courseDTO) {
 //        this.regNo = regNo;
         this.regDate = regDate;
         this.regFee = regFee;
@@ -61,7 +68,7 @@ public class RegistrationDTO {
 
     @Override
     public String toString() {
-        return "RegistrationDTO{" +
+        return "RegistrationTM{" +
 //                "regNo=" + regNo +
                 ", regDate='" + regDate + '\'' +
                 ", regFee=" + regFee +

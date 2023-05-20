@@ -16,11 +16,11 @@
             <Font name="System Bold Italic" size="25.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="txtCourseId" labelFloat="true" layoutX="46.0" layoutY="88.0" onAction="#txtIdOnAction" promptText="Course Id" style="-fx-border-radius: 20%;">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </JFXTextField>
+<!--      <JFXTextField fx:id="txtCourseId" labelFloat="true" layoutX="46.0" layoutY="88.0" onAction="#txtIdOnAction" promptText="Course Id" style="-fx-border-radius: 20%;">-->
+<!--         <font>-->
+<!--            <Font size="16.0" />-->
+<!--         </font>-->
+<!--      </JFXTextField>-->
       <JFXTextField fx:id="txtCourseName" labelFloat="true" layoutX="46.0" layoutY="147.0" prefHeight="37.0" prefWidth="666.0" promptText="Course Name">
          <font>
             <Font size="16.0" />
@@ -38,7 +38,7 @@
       </JFXTextField>
       <TableView fx:id="tblCourse" layoutX="46.0" layoutY="272.0" prefHeight="244.0" prefWidth="666.0">
         <columns>
-          <TableColumn fx:id="colCourseId" prefWidth="94.0" text="Id" />
+<!--          <TableColumn fx:id="colCourseId" prefWidth="94.0" text="Code" />-->
           <TableColumn fx:id="colCourseName" prefWidth="258.0" text="Name" />
             <TableColumn fx:id="colDuration" prefWidth="166.0" text="Duration" />
             <TableColumn fx:id="colFee" prefWidth="146.0" text="Fee" />

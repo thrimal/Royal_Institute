@@ -1,15 +1,15 @@
 package lk.royalInstitute.StudentManagementSystem.entity;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import lk.royalInstitute.StudentManagementSystem.dto.StudentDTO;
+
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 public class Student implements SuperEntity{
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private String id;
     private String name;
     private String address;
@@ -24,13 +24,16 @@ public class Student implements SuperEntity{
     public Student() {
     }
 
-    public Student(String id, String name, String address, String contact, String dob, String gender) {
-        this.setId(id);
+    public Student(String name, String address, String contact, String dob, String gender) {
         this.setName(name);
         this.setAddress(address);
         this.setContact(contact);
         this.setDob(dob);
         this.setGender(gender);
+    }
+
+    public Student(StudentDTO studentDTO) {
+
     }
 
     public String getId() {
@@ -81,14 +84,6 @@ public class Student implements SuperEntity{
         this.gender = gender;
     }
 
-//    public List<Registration> getRegistrations() {
-//        return registrations;
-//    }
-
-//    public void setRegistrations(List<Registration> registrations) {
-//        this.registrations = registrations;
-//    }
-
     @Override
     public String toString() {
         return "Student{" +
@@ -98,7 +93,6 @@ public class Student implements SuperEntity{
                 ", contact='" + contact + '\'' +
                 ", dob='" + dob + '\'' +
                 ", gender='" + gender + '\'' +
-//                ", registrations=" + registrations +
                 '}';
     }
 }

@@ -1,12 +1,15 @@
 package lk.royalInstitute.StudentManagementSystem.entity;
 
+import lk.royalInstitute.StudentManagementSystem.dto.CourseDTO;
+import lk.royalInstitute.StudentManagementSystem.dto.StudentDTO;
+
 import javax.persistence.*;
 
 @Entity
 public class Registration implements SuperEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int regNo;
+    private long regNo;
     private String regDate;
     private double regFee;
 
@@ -22,25 +25,18 @@ public class Registration implements SuperEntity{
     }
 
     public Registration(String regDate, double regFee, Student student, Course course) {
+//        this.regNo = regNo;
         this.regDate = regDate;
         this.regFee = regFee;
         this.student = student;
         this.course = course;
     }
 
-    public Registration(int regNo, String regDate, double regFee, Student student, Course course) {
-        this.regNo = regNo;
-        this.regDate = regDate;
-        this.regFee = regFee;
-        this.student = student;
-        this.course = course;
-    }
-
-    public int getRegNo() {
+    public long getRegNo() {
         return regNo;
     }
 
-    public void setRegNo(int regNo) {
+    public void setRegNo(long regNo) {
         this.regNo = regNo;
     }
 

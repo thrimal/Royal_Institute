@@ -14,7 +14,7 @@ public class CourseBoImpl implements CourseBO {
     @Override
     public boolean saveCourse(CourseDTO courseDTO) throws Exception {
         return courseDAO.save(new Course(
-                courseDTO.getCode(),
+//                courseDTO.getCode(),
                 courseDTO.getName(),
                 courseDTO.getDuration(),
                 courseDTO.getCourseFee()
@@ -24,7 +24,7 @@ public class CourseBoImpl implements CourseBO {
     @Override
     public boolean updateCourse(CourseDTO courseDTO) throws Exception {
         return courseDAO.update(new Course(
-                courseDTO.getCode(),
+//                courseDTO.getCode(),
                 courseDTO.getName(),
                 courseDTO.getDuration(),
                 courseDTO.getCourseFee()
@@ -40,7 +40,7 @@ public class CourseBoImpl implements CourseBO {
     public CourseDTO get(String id) throws Exception {
         Course course = courseDAO.get(id);
         return new CourseDTO(
-                course.getCode(),
+//                course.getCode(),
                 course.getName(),
                 course.getDuration(),
                 course.getCourseFee()
@@ -53,7 +53,7 @@ public class CourseBoImpl implements CourseBO {
         ArrayList<CourseDTO> courseDTOS=new ArrayList<>();
         for (Course c : all) {
             courseDTOS.add(new CourseDTO(
-                    c.getCode(),
+//                    c.getCode(),
                     c.getName(),
                     c.getDuration(),
                     c.getCourseFee()
@@ -63,10 +63,10 @@ public class CourseBoImpl implements CourseBO {
     }
 
     @Override
-    public CourseDTO getCourseById(String id) throws Exception {
-        Course course = courseDAO.getCourseById(id);
+    public CourseDTO getCourseByName(String id) throws Exception {
+        Course course = courseDAO.get(id);
         return new CourseDTO(
-                course.getCode(),
+//                course.getCode(),
                 course.getName(),
                 course.getDuration(),
                 course.getCourseFee()

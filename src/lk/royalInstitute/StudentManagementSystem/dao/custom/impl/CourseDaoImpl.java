@@ -47,7 +47,10 @@ public class CourseDaoImpl implements CourseDAO {
     public Course get(String s) throws Exception {
         Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
-        Course course = session.get(Course.class, s);
+        String hql = "FROM Course WHERE name = :name";
+        Query query = session.createQuery(hql);
+        query.setParameter("name", s);
+        Course course = (Course) query.uniqueResult();
         transaction.commit();
         session.close();
         return course;
@@ -66,13 +69,12 @@ public class CourseDaoImpl implements CourseDAO {
     }
 
     @Override
-    public Course getCourseById(String id) throws Exception {
+    public Course getCourseByName(String name) throws Exception {
         Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
-        Query query=session.createNativeQuery("select * from Course where code=?",id);
-        Course course = (Course) query.list();
+        Query query=session.createNativeQuery("select * from course where courseName=?",name);
         transaction.commit();
         session.close();
-        return course;
+        return (Course) query;
     }
 }

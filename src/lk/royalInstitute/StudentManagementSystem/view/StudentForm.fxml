@@ -11,18 +11,18 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="538.0" prefWidth="754.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.royalInstitute.StudentManagementSystem.controller.StudentFormController">
+<AnchorPane prefHeight="538.0" prefWidth="754.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.royalInstitute.StudentManagementSystem.controller.RegistrationFormController">
    <children>
       <Label layoutX="34.0" layoutY="14.0" prefHeight="35.0" prefWidth="153.0" text="Student Form">
          <font>
             <Font name="System Bold Italic" size="24.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="txtStudentId" labelFloat="true" layoutX="34.0" layoutY="70.0" onAction="#txtStudentIdOnAction" promptText="Student Id">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </JFXTextField>
+<!--      <JFXTextField fx:id="txtStudentId" labelFloat="true" layoutX="34.0" layoutY="70.0" onAction="#txtStudentIdOnAction" promptText="Student Id">-->
+<!--         <font>-->
+<!--            <Font size="14.0" />-->
+<!--         </font>-->
+<!--      </JFXTextField>-->
       <JFXTextField fx:id="txtStudentName" labelFloat="true" layoutX="34.0" layoutY="115.0" prefHeight="30.0" prefWidth="678.0" promptText="Student Name">
          <font>
             <Font size="14.0" />
@@ -42,16 +42,19 @@
       <Label fx:id="lblDate" layoutX="573.0" layoutY="23.0" prefHeight="17.0" prefWidth="124.0" text="Date" />
       <Separator layoutX="11.0" layoutY="55.0" prefHeight="5.0" prefWidth="728.0" />
       <ComboBox fx:id="cmbGender" layoutX="545.0" layoutY="218.0" onAction="#cmbGenderOnAction" prefHeight="35.0" prefWidth="167.0" promptText="Gender" />
-      <ComboBox fx:id="cmbCourse" layoutX="14.0" layoutY="285.0" onAction="#cmbCourseOnAction" prefHeight="25.0" prefWidth="272.0" promptText="Course" />
-      <JFXTextField fx:id="txtCourseId" layoutX="306.0" layoutY="285.0" promptText="Course Id" />
-      <JFXTextField fx:id="txtCourseDuration" layoutX="463.0" layoutY="285.0" prefHeight="25.0" prefWidth="116.0" promptText="Course Duration" />
-      <JFXTextField fx:id="txtCourseFee" layoutX="596.0" layoutY="285.0" promptText="Course Fee" />
+      <ComboBox fx:id="cmbCourse" layoutX="34.0" layoutY="285.0" onAction="#cmbCourseOnAction" prefHeight="25.0" prefWidth="174.0" promptText="Course" />
+      <JFXTextField fx:id="txtCourseId" layoutX="260.0" layoutY="285.0" promptText="Course Id" />
+      <JFXTextField fx:id="txtCourseDuration" layoutX="429.0" layoutY="285.0" prefHeight="25.0" prefWidth="116.0" promptText="Course Duration" />
+      <JFXTextField fx:id="txtCourseFee" layoutX="577.0" layoutY="285.0" promptText="Course Fee" />
       <TableView fx:id="tblStudents" layoutX="21.0" layoutY="359.0" prefHeight="125.0" prefWidth="713.0">
         <columns>
-          <TableColumn fx:id="colCourseId" prefWidth="104.0" text="Course ID" />
-          <TableColumn fx:id="colCourse" prefWidth="278.0" text="Course" />
-            <TableColumn fx:id="colDuratiion" prefWidth="177.0" text="Duration" />
-            <TableColumn fx:id="colFee" prefWidth="153.0" text="Fee" />
+<!--            <TableColumn id="studentId" fx:id="colStudentId" prefWidth="76.0" text="Student Id" />-->
+            <TableColumn id="studentName" fx:id="colStudentName" prefWidth="98.0" text="Student Name" />
+            <TableColumn id="contact" fx:id="colContact" prefWidth="99.0" text="Contact" />
+          <TableColumn id="courseId" fx:id="colCourseId" prefWidth="85.0" text="Course ID" />
+          <TableColumn id="courseName" fx:id="colCourseName" prefWidth="128.0" text="Course Name" />
+            <TableColumn id="duration" fx:id="colDuration" prefWidth="100.0" text="Duration" />
+            <TableColumn id="fee" fx:id="colFee" prefWidth="125.0" text="Fee" />
         </columns>
       </TableView>
       <Label fx:id="lblTotal" layoutX="26.0" layoutY="491.0" prefHeight="35.0" prefWidth="272.0" text="Total" textFill="#ff3c3c">

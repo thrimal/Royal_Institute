@@ -33,10 +33,10 @@ public class CourseFormController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        tblCourse.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("code"));
-        tblCourse.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("name"));
-        tblCourse.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("duration"));
-        tblCourse.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("courseFee"));
+//        tblCourse.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("code"));
+        tblCourse.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("name"));
+        tblCourse.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("duration"));
+        tblCourse.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("courseFee"));
 
         loadTable();
     }
@@ -47,7 +47,7 @@ public class CourseFormController implements Initializable {
     public void btnSaveOnAction(ActionEvent actionEvent) {
         try {
             boolean saveCourse = courseBO.saveCourse(new CourseDTO(
-                    txtCourseId.getText(),
+//                    txtCourseId.getText(),
                     txtCourseName.getText(),
                     txtCourseDuration.getText(),
                     Double.parseDouble(txtCourseFee.getText())
@@ -55,11 +55,11 @@ public class CourseFormController implements Initializable {
             if(saveCourse){
                 new Alert(Alert.AlertType.INFORMATION,"Save Successfully...").show();
                 clearFields();
-                tblCourse.refresh();
                 loadTable();
+                tblCourse.refresh();
             }
         } catch (Exception e) {
-            new Alert(Alert.AlertType.INFORMATION,"Save Faile...").show();
+            new Alert(Alert.AlertType.INFORMATION,"Save Failed...").show();
             e.printStackTrace();
         }
     }
@@ -71,7 +71,7 @@ public class CourseFormController implements Initializable {
         if(buttonType.get()==ButtonType.YES){
             CourseTM selectedItem =  tblCourse.getSelectionModel().getSelectedItem();
             try{
-                courseBO.deleteCourse(selectedItem.getCode());
+//                courseBO.deleteCourse(selectedItem.getCode());
                 tblCourse.getItems().remove(selectedItem);
                 tblCourse.getSelectionModel().clearSelection();
                 tblCourse.refresh();
@@ -83,10 +83,11 @@ public class CourseFormController implements Initializable {
     }
     public void loadTable(){
         try {
+            tblCourse.refresh();
             ArrayList<CourseDTO> courseBOAll = courseBO.getAll();
             for (CourseDTO c : courseBOAll) {
                 courseTMS.add(new CourseTM(
-                        c.getCode(),
+//                        c.getCode(),
                         c.getName(),
                         c.getDuration(),
                         c.getCourseFee()
@@ -99,7 +100,7 @@ public class CourseFormController implements Initializable {
     }
 
     public void clearFields(){
-        txtCourseId.clear();
+//        txtCourseId.clear();
         txtCourseFee.clear();
         txtCourseName.clear();
         txtCourseDuration.clear();

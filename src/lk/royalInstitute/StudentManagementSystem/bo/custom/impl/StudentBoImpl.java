@@ -14,7 +14,7 @@ public class StudentBoImpl implements StudentBO {
     @Override
     public boolean saveStudent(StudentDTO studentDTO) throws Exception {
         return studentDAO.save(new Student(
-                studentDTO.getId(),
+//                studentDTO.getId(),
                 studentDTO.getName(),
                 studentDTO.getAddress(),
                 studentDTO.getContact(),
@@ -26,7 +26,7 @@ public class StudentBoImpl implements StudentBO {
     @Override
     public boolean updateStudent(StudentDTO studentDTO) throws Exception {
         return studentDAO.update(new Student(
-                studentDTO.getId(),
+//                studentDTO.getId(),
                 studentDTO.getName(),
                 studentDTO.getAddress(),
                 studentDTO.getContact(),
